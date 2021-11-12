@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LPW Games</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">First</string>
+    <string name="slide_1_desc">First Slide</string>
+
+    <string name="slide_2_title">Second</string>
+    <string name="slide_2_desc">Second Slide</string>
+
+    <string name="slide_3_title">Third</string>
+    <string name="slide_3_desc">Third Slide</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+</resources>
