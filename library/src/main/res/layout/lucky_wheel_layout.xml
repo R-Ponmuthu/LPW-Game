@@ -6,7 +6,8 @@
     <kimjiome.library.luckywheel.PielView
         android:id="@+id/pieView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"/>
 
     <ImageView
         android:id="@+id/cursorView"

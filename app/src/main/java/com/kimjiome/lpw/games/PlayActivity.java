@@ -23,7 +23,7 @@ public class PlayActivity extends AppCompatActivity {
         numberBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PlayActivity.this, NumberGameActivity.class));
+                startActivity(new Intent(PlayActivity.this, NumberGameEntryActivity.class));
             }
         });
     }

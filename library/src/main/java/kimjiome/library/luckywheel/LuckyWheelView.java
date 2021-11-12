@@ -103,7 +103,7 @@ public class LuckyWheelView extends RelativeLayout implements PielView.PieRotate
         addView(frameLayout);
     }
 
-    
+
     public boolean isTouchEnabled() {
         return pielView.isTouchEnabled();
     }
@@ -112,7 +112,7 @@ public class LuckyWheelView extends RelativeLayout implements PielView.PieRotate
         pielView.setTouchEnabled(touchEnabled);
     }
 
-    
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         //This is to control that the touch events triggered are only going to the PieView
@@ -179,7 +179,7 @@ public class LuckyWheelView extends RelativeLayout implements PielView.PieRotate
     public void startLuckyWheelWithTargetIndex(int index) {
         pielView.rotateTo(index);
     }
-    
+
     public void startLuckyWheelWithRandomTarget() {
         Random r = new Random();
         pielView.rotateTo(r.nextInt(pielView.getLuckyItemListSize() - 1));
