@@ -1,0 +1,218 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.Invite"
+    android:background="@color/colorPrimaryDark"
+    tools:ignore="NamespaceTypo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="43dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_arrow_back_outline" />
+
+                <TextView
+                    android:id="@+id/toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="@string/refer"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="15dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginStart="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/colorPrimary">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/invitetop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_20dp"
+                        android:background="@drawable/custom_bg">
+
+                        <ImageView
+                            android:id="@+id/img"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            app:srcCompat="@drawable/ic_referimage"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:id="@+id/referearn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/refer"
+                            android:textAllCaps="true"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/museo_semi_bold"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/msgLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/referearn"
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            >
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/txtrefercoin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:fontFamily="@font/museo_regular"
+                                    android:text="@string/refer_desc"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <!--<ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/lyttop"
+                        android:layout_marginTop="15dp">-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/invitetop"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingTop="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/your_refer_code"
+                            android:fontFamily="@font/museo_regular"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10sp"
+                            android:padding="@dimen/padding_10"
+                            android:background="@drawable/bg_border"
+                            android:fontFamily="@font/museo_semi_bold"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/white"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/txtcopy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/museo_regular"
+                            android:text="@string/tap_copy"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtinvite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/btn_bg"
+                            android:drawablePadding="10dp"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/margin_20dp"
+                            android:layout_marginRight="@dimen/margin_20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/invite"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:targetApi="lollipop" />
+
+
+                        <include
+                            android:id="@+id/layout_banner"
+                            layout="@layout/banner"
+                            />
+                    </LinearLayout>
+                    <!--</ScrollView>-->
+                </RelativeLayout>
+               </androidx.cardview.widget.CardView>
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

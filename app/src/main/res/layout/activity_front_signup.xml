@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="30dp"
+    tools:context=".ui.activity.FrontSignup">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp">
+
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/museo_semi_bold"
+                android:text="@string/create_account"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon"
+                tools:ignore="UnknownIdInLayout" />
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/museo_regular"
+                android:text="@string/fil_detail"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+            <TextView
+                android:id="@+id/createAccountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/museo_semi_bold"
+                android:onClick="login"
+                android:text="@string/already_have_an_account_signin_here"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linerlayout" />
+
+
+            <LinearLayout
+                android:id="@+id/linerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/forgotPasswordText"
+                app:layout_constraintTop_toBottomOf="@+id/msg"
+                tools:ignore="UnknownIdInLayout"
+                tools:layout_editor_absoluteX="30dp">
+
+                <com.ornach.richtext.RichView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    app:rt_backgroundColor="#F2F4F6"
+                    app:rt_radius="3dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/username"
+                        android:textColorHint="@color/gray"
+                        app:boxBackgroundMode="none"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                        app:hintTextColor="@color/gray">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:inputType="text"
+                            android:padding="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.ornach.richtext.RichView>
+
+                <com.ornach.richtext.RichView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    app:hintTextColor="@color/gray"
+                    app:rt_backgroundColor="#F2F4F6"
+                    app:rt_radius="3dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:textColorHint="@color/gray"
+                        app:boxBackgroundMode="none"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:inputType="textEmailAddress"
+                            android:padding="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.ornach.richtext.RichView>
+
+                <com.ornach.richtext.RichView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    app:hintTextColor="@color/gray"
+                    app:rt_backgroundColor="#F2F4F6"
+                    app:rt_radius="3dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone"
+                        android:textColorHint="@color/gray"
+                        app:boxBackgroundMode="none"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:inputType="phone"
+                            android:padding="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.ornach.richtext.RichView>
+
+                <com.ornach.richtext.RichView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    app:hintTextColor="@color/gray"
+                    app:rt_backgroundColor="#F2F4F6"
+                    app:rt_radius="3dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:textColorHint="@color/gray"
+                        app:boxBackgroundMode="none"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:inputType="textPassword"
+                            android:padding="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.ornach.richtext.RichView>
+
+                <com.ornach.richtext.RichView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    app:hintTextColor="@color/gray"
+                    app:rt_backgroundColor="#F2F4F6"
+                    app:rt_radius="3dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/refer_code"
+                        android:textColorHint="@color/gray"
+                        app:boxBackgroundMode="none"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/refer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:inputType="phone"
+                            android:padding="12dp"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.ornach.richtext.RichView>
+
+                <com.ornach.nobobutton.NoboButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:onClick="Signup"
+                    android:padding="13dp"
+                    app:nb_backgroundColor="@color/colorAccent"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/create_account"
+                    app:nb_textColor="@android:color/white"
+                    app:nb_textSize="18sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

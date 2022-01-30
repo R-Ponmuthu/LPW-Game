@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="2dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginTop="5dp"
+    android:id="@+id/cv"
+    android:elevation="15dp"
+    app:cardCornerRadius="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    tools:ignore="UnusedAttribute"
+    app:cardBackgroundColor="@color/transprent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/placdeholder" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/museo_bold"
+            android:textSize="16sp"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@color/white"  />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

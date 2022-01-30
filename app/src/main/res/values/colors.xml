@@ -1,48 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
 
+    <color name="colorPrimary">#2B295A</color>
+    <color name="colorPrimaryDark">#4C4582</color>
+    <color name="colorAccent">#21E8AC</color>
+
+    <color name="bottomNavigationTextColor">#B2B2B2</color>
+    <color name="bottomNavigationTintColor">#B2B2B2</color>
+    <color name="bottomNavigationSelectedColor">#FC4926</color>
+    <color name="bottomNavigationBackground">#F7F7F7</color>
+    <color name="grayfm">#bfbfbf</color>
+    <color name="view_divider_color_2">#DADADA</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="lightblack">#1E1D1D</color>
+    <color name="transparent">#0000</color>
+    <color name="customAccent">#ffc400</color>
+    <color name="transprent">#0000</color>
 
-    <color name="red">#EA4335</color>
-    <color name="blue">#4285F4</color>
-    <color name="green">#34A853</color>
-    <color name="yellow">#FBBC05</color>
+    <color name="blue_dark">#3659A2</color>
+    <color name="blue">#3559A3</color>
+    <color name="gold">#FEB337</color>
+    <color name="shadow">#555555</color>
+    <color name="title">#777777</color>
+    <color name="bgBottomNavigation">#fe485a</color>
+    <color name="pink">#fe485a</color>
+    <color name="red">#D50000</color>
+    <color name="view_line">#d4d9d5</color>
+    <color name="gray">#808285</color>
 
-    <!-- Screens background color-->
-    <color name="bg_screen1">#f64c73</color>
-    <color name="bg_screen2">#20d2bb</color>
-    <color name="bg_screen3">#3395ff</color>
-    <color name="bg_screen4">#c873f4</color>
+    <!--gradient colors-->
+    <color name="gradientOrange">#FF416C</color>
+    <color name="gradientViolet">#8A52E9</color>
+    <color name="gradientLightYellow">#FFA72F</color>
+    <color name="gradientLightOrange">#FF641A</color>
+    <color name="gradientLightYellow2">#FFC92B</color>
+    <color name="gradientLightOrange2">#FF7765</color>
+    <color name="gradientOrange3">#F7A23C</color>
+    <color name="gradientLightBlue">#376DF6</color>
+    <color name="gradientLightGreen">#21E8AC</color>
 
-    <!-- dots inactive colors -->
-    <color name="dot_dark_screen1">#d1395c</color>
-    <color name="dot_dark_screen2">#14a895</color>
-    <color name="dot_dark_screen3">#2278d4</color>
-    <color name="dot_dark_screen4">#a854d4</color>
+    <!--colors for nongradientversion-->
+    <color name="cardColorTeal">#09CD95</color>
+    <color name="cardColorOrange">#FF651B</color>
+    <color name="cardColorYellow">#FF991F</color>
+    <color name="cardColorViolet">#8F51E3</color>
+    <color name="cardColorRed">#F94172</color>
+    <color name="gradient_color_1">#3f5efb</color>
+    <color name="gradient_color_2">#fc466b</color>
+    <color name="Spinwell140">#EBBEBDFC</color>
 
-    <!-- dots active colors -->
-    <color name="dot_light_screen1">#f98da5</color>
-    <color name="dot_light_screen2">#8cf9eb</color>
-    <color name="dot_light_screen3">#93c6fd</color>
-    <color name="dot_light_screen4">#e4b5fc</color>
-
-    <array name="array_dot_active">
-        <item>@color/dot_light_screen1</item>
-        <item>@color/dot_light_screen2</item>
-        <item>@color/dot_light_screen3</item>
-        <item>@color/dot_light_screen4</item>
-    </array>
-
-
-    <array name="array_dot_inactive">
-        <item>@color/dot_dark_screen1</item>
-        <item>@color/dot_dark_screen2</item>
-        <item>@color/dot_dark_screen3</item>
-        <item>@color/dot_dark_screen4</item>
-    </array>
-
+    <color name="dialog_text">#000000</color>
+    <color name="green">#16A300</color>
+    <color name="dialog_text_button">#f20056</color>
+    <color name="lightgrey">#EEEEEE</color>
+    <color name="background">#DDDDDD</color>
+    <color name="drawer_item">#626262</color>
+    <color name="drawer_item_selected">#f20056</color>
 </resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.WithdrawActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <include
+        android:id="@+id/layout_toolbar"
+        layout="@layout/toolbar"/>
+
+
+    <LinearLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_below="@id/layout_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_10"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="@dimen/padding_10"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/item_placeholder"/>
+        <include layout="@layout/item_placeholder"/>
+        <include layout="@layout/item_placeholder"/>
+        <include layout="@layout/item_placeholder"/>
+        <include layout="@layout/item_placeholder"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/no_result"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/no_result" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/shimmer_view_container"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        android:paddingBottom="55dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="vertical" />
+
+   <include
+            android:id="@+id/layout_banner"
+            layout="@layout/banner"
+            />
+</RelativeLayout>

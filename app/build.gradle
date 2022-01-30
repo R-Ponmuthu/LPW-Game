@@ -1,35 +1,98 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 29
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+
     defaultConfig {
-        applicationId "com.kimjiome.lpw.games"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId "com.it.lpw.game"
+        minSdk 19
+        targetSdk 31
+        versionCode 2
+        versionName "2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "fr"
+        multiDexEnabled true
+    }
+    buildFeatures{
+        viewBinding true;
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false  // shrink
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    aaptOptions {
+        cruncherEnabled = false
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'API', API_URL;
+        it.buildConfigField 'String', 'API_KEY', API_KEY;
+    }
 }
+
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.browser:browser:1.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation project(':luckyWheel')
+    implementation 'androidx.core:core:1.6.0'
+    implementation 'com.alimuzaffar.lib:pinentryedittext:1.3.1'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    implementation 'com.startapp:inapp-sdk:4.9.1'
+    implementation 'com.ornach.richtext:richtext:1.0'
+    implementation 'com.ornach.nobobutton:nobobutton:1.6'
+    implementation 'com.github.florent37:shapeofview:1.3.2'
+    implementation 'com.ornach.magicicon:magic-icon:1.6'
+    implementation 'com.github.matecode:Snacky:1.1.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'com.applovin:applovin-sdk:11.0.0'
+    implementation 'com.adcolony:sdk:4.6.4'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.karumi:dexter:6.2.2'
+    implementation platform('com.google.firebase:firebase-bom:28.4.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.applovin.mediation:facebook-adapter:6.7.0.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.8.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.omjoonkim.library:skeleton-loading-view:0.1.1'
+    implementation 'com.airbnb.android:lottie:3.6.1'
+    implementation (name: 'unity-ads', ext: 'aar')
+    implementation 'com.ankushgrover:Hourglass:2.0.0'
 
-    implementation project(path: ':library')
 
-    implementation 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
 }
+apply plugin: 'com.google.gms.google-services'

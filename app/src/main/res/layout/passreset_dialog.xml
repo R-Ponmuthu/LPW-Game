@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        tools:ignore="MissingConstraints"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/activity_contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+
+            <ImageView
+                android:src="@drawable/reset"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                android:id="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/close"
+                android:padding="10sp"
+                app:tint="@color/cardColorRed" />
+            <LinearLayout
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/imageView">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/museo_regular"
+                    android:text="@string/update_pass_desc"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:background="@drawable/round_corner_transparent"
+                        android:id="@+id/newpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:hint="@string/new_password"
+                        android:shadowRadius="20"
+                        android:autofillHints="no"
+                        tools:ignore="TextFields" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:id="@+id/support_input_layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:background="@drawable/round_corner_transparent"
+                        android:id="@+id/confpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:hint="@string/confirm_password"
+                        android:shadowRadius="20"
+                        android:autofillHints="no"
+                        tools:ignore="TextFields" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:text="@string/submit"
+                    android:layout_marginTop="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/submit"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_bg"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:textColor="@color/white"
+                    android:elevation="4dp"
+                    tools:targetApi="lollipop" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

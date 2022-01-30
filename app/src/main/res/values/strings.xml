@@ -1,20 +1,156 @@
 <resources>
-    <string name="app_name">LPW Games</string>
+    <string name="app_name">Reward App</string>
+    <string name="app_name_part_one" translatable="false">Reward</string>
+    <string name="app_name_part_two" translatable="false">App</string>
 
-    <string name="next">NEXT</string>
-    <string name="skip">SKIP</string>
-    <string name="start">GOT IT</string>
+    <string name="APPLOVIN_SDK_KEY">doC0fK1moTrtRAG-GRCQ-hTS8luz_az5TW3keLX6FMme0lTCIHGH0BCGZ9zCMzlOn-ObcOn7F7suTE35eHV_Xb</string>
 
-    <string name="slide_1_title">First</string>
-    <string name="slide_1_desc">First Slide</string>
+    <string name="action_settings">Settings</string>
 
-    <string name="slide_2_title">Second</string>
-    <string name="slide_2_desc">Second Slide</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
 
-    <string name="slide_3_title">Third</string>
-    <string name="slide_3_desc">Third Slide</string>
+    <string name="error_invalid_email">Please Enter Email</string>
+    <string name="error_invalid_password">Please Enter Password</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
-    <string name="play_again">Play Again</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_point_history">History</string>
+    <string name="title_activity_task">TaskActivity</string>
+
+
+    <string name="title_activity_redeem_points">Redeem Points</string>
+    <string name="prompt_mobile_number">Mobile No.</string>
+    <string name="title_activity_frag_holder">Earn More</string>
+    <string name="title_activity_act_redeem_points">Redeem Points</string>
+    <string name="rewarded_dialog_header">Video Rewarded</string>
+    <string name="rewarded_dialog_message">You have been rewarded</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email_error">Email is Not Valid</string>
+    <string name="error_password">Please Enter Password</string>
+    <string name="on_internet">No Internet Connection</string>
+    <string name="username">User Name</string>
+    <string name="phone">Phone</string>
+    <string name="refer">Invite Friend and get Bonus</string>
+    <string name="fil_detail">Fill Detail to Continue</string>
+    <string name="home">Home</string>
+    <string name="instructions">Instructions</string>
+    <string name="my_network">My Network</string>
+    <string name="notifications">Notifications</string>
+    <string name="history">History</string>
+    <string name="feedback">Feedback</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About us</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="select_profile_picture">Select Profile Picture</string>
+    <string name="already_have_an_account_signin_here">Already have an account? SignIn here.</string>
+    <string name="signup">Signup</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="referral_id_if_available">Referral Id(If Available)</string>
+    <string name="company">Company</string>
+    <string name="name">Name</string>
+    <string name="version">Version</string>
+    <string name="contact_us">Contact us</string>
+    <string name="website">Website</string>
+    <string name="current_coins">Current Coins:</string>
+    <string name="_00000">00000</string>
+    <string name="rewards">Rewards</string>
+    <string name="connect_with_us">Connect With Us</string>
+    <string name="www_example_com">www.example.com</string>
+    <string name="who_we_are">Who we are?</string>
+    <string name="more_offers">More Offers</string>
+    <string name="invite">Invite</string>
+    <string name="confirm">Confirm</string>
+    <string name="_10">10</string>
+    <string name="coin_history">Coin History</string>
+    <string name="reward_history">Rewards History</string>
+    <string name="no_internet">No Internet Connection!!</string>
+    <string name="error_username">PLease Enter User Name</string>
+    <string name="error_phone">Enter Phone Number</string>
+    <string name="ok">Ok</string>
+    <string name="_0">0</string>
+    <string name="coin">Coin</string>
+    <string name="activity_video">Videowall</string>
+    <string name="wrong">Try Again Later</string>
+    <string name="logout">Log out</string>
+    <string name="invitefriend">Invite Friend</string>
+    <string name="tap_copy">Tap to Copy</string>
+    <string name="your_refer_code">Your Refer Code</string>
+    <string name="profile">Profile</string>
+    <string name="hello">Helllo,</string>
+    <string name="mobile">Mobile</string>
+    <string name="play">PLAY</string>
+    <string name="spinwin"><![CDATA[Spin & Win]]></string>
+    <string name="today_remaining_spin">Today Remaining Spin :</string>
+    <string name="skip">Skip</string>
+    <string name="congratulations">CONGRATULATIONS !!</string>
+    <string name="win_msg">You just Completed Challenge !! Share this with your friends and win a chance of getting  more coin.</string>
+    <string name="share">Share</string>
+    <string name="complete_challange">Complete challange</string>
+    <string name="redeem_reward">Redeem Rewards</string>
+    <string name="loading">Loading ...</string>
+    <string name="please_enter_id">Please Enter ID</string>
+    <string name="submit">Submit</string>
+    <string name="task_challange">Task Challange</string>
+    <string name="no_result_found">No Result Found</string>
+    <string name="refer_desc">Invite your Friend and Earn Coin</string>
+    <string name="we_sent_an_otp_on_your_email_please_check_your_email_also_check_spam_folder">We sent an OTP on your email. Please check your email also check Spam Folder.</string>
+    <string name="verify">Verify</string>
+    <string name="otp_verification">Otp Verification</string>
+    <string name="enter_your_registerd_email_you_will_receive_6_digit_otp">Enter Your Registerd Email You will Receive 6 Digit OTP</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="update_pass_desc">Create New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="id">ID</string>
+    <string name="no_thanks">No Thanks</string>
+    <string name="please_wait">Please wait....</string>
+    <string name="vpn_not_connected">for using this app you need to use vpn</string>
+    <string name="read_article_subtitle"><![CDATA[Read Article & Complete Offer get Reward]]></string>
+    <string name="proceed">Proceed</string>
+    <string name="get_started">Get Started</string>
+    <string name="next">Next</string>
+    <string name="rate_our_app">Rate our app</string>
+    <string name="share_your_experience_with_us">Share Your Experience with us</string>
+    <string name="watch_article_getbonus">Watch Article get Bonus</string>
+    <string name="okay">Okay</string>
+    <string name="close">Close</string>
+    <string name="oops">Oops</string>
+
+    <string name="game" translatable="false">Games</string>
+    <string name="play_game" translatable="false">Play Games</string>
+    <string name="txt_loading" translatable="false">Loading..</string>
+    <string name="txt_exit" translatable="false">Exit</string>
+    <string name="txt_confirm_exit" translatable="false">Do you want to Exit?</string>
+    <string name="txt_yes" translatable="false">Yes</string>
+    <string name="txt_no" translatable="false">No</string>
+    <string name="txt_this_function_is_not_support_here" translatable="false">This function is not support here.</string>
+    <string name="Top_picks">Top Picks</string>
+    <string name="play_zone">PlayZone</string>
+    <string name="history_subtitle"><![CDATA[Wallet history & Reward history]]></string>
+    <string name="rewards_subtitle"><![CDATA[Collect Reward & Gift Card]]></string>
+    <string name="contact_us_subtitle"><![CDATA[Contact us & send your Feedback]]></string>
+    <string name="feedback_subtitle">"submit your feedback "</string>
+    <string name="logout_this_accout">Logout this account</string>
+    <string name="support">Support</string>
+    <string name="clickto_read">Click to read Privacy policy</string>
+    <string name="my_coin">My Coin</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to Logout?</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="update">Update</string>
+    <string name="update_available">New Update Available</string>
+    <string name="refer_code">Referral Code</string>
 
 </resources>

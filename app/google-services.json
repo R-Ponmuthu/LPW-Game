@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959827321379",
+    "project_id": "lpw-games",
+    "storage_bucket": "lpw-games.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959827321379:android:bc71c75e8aa63c057b4796",
+        "android_client_info": {
+          "package_name": "com.it.lpw.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959827321379-44outuflibvqr5prsf9l1aoulvjc3rin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwbaQ-b-hvYOg7MC1sxQ91SrYVnFriig0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959827321379-44outuflibvqr5prsf9l1aoulvjc3rin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

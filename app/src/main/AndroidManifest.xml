@@ -1,32 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kimjiome.lpw.games">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.it.lpw.game">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:allowBackup="true"
+        android:name=".MyApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="m"
+        tools:replace="android:allowBackup">
+
+        <activity android:name=".ui.activity.IntroActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle" />
+
+        <activity android:name=".ui.activity.RewardedAds"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle" />
+
+        <activity android:name=".ui.activity.InterAds"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle" />
+
+        <activity android:name=".ui.activity.PlayGames"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle" />
+
+        <activity android:name=".ui.activity.OtpVerification"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".ui.activity.AboutusActivity"
+            android:label="About us"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".ui.activity.YTVideoActivity"
+            android:label="Watch Video"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".ui.activity.WebviewActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle"/>
+
+        <activity android:name=".ui.activity.WeburlActivity"
+            android:label="Visit &amp; Earn"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".ui.activity.WithdrawActivity"
+            android:label="Redeem"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
-            android:name=".NumberGameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PlayActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="true"
-            android:theme="@style/NoActionBar">
+            android:name=".ui.activity.Splash"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoTitle"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-    </application>
 
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".ui.activity.FrontLogin"
+            android:configChanges="screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:label="SignIn"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.activity.FrontSignup"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:label="SignUp"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".ui.activity.SpinActivity"
+            android:label="Spin and Win"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <service
+            android:name=".ui.activity.PushNotificationService"
+            android:exported="false"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT">
+                </action>
+            </intent-filter>
+        </service>
+
+        <meta-data android:name="applovin.sdk.key"
+            android:value="@string/APPLOVIN_SDK_KEY"  />
+    </application>
 </manifest>
