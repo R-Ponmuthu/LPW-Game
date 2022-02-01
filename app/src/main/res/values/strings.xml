@@ -91,8 +91,10 @@
     <string name="hello">Helllo,</string>
     <string name="mobile">Mobile</string>
     <string name="play">PLAY</string>
+    <string name="join">JOIN</string>
     <string name="spinwin"><![CDATA[Spin & Win]]></string>
     <string name="today_remaining_spin">Today Remaining Spin :</string>
+    <string name="time_remaining">Time Remaining :</string>
     <string name="skip">Skip</string>
     <string name="congratulations">CONGRATULATIONS !!</string>
     <string name="win_msg">You just Completed Challenge !! Share this with your friends and win a chance of getting  more coin.</string>

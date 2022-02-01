@@ -33,23 +33,24 @@ public class FrontSignup extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     Activity activity;
     Session session;
-    private AlertDialog dialog,alertDialog;
+    private AlertDialog dialog, alertDialog;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
-        binding=ActivityFrontSignupBinding.inflate(getLayoutInflater());
+        binding = ActivityFrontSignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        session=new Session(this);
-        activity=FrontSignup.this;
-        dialog=Method.loading(activity);
-        alertDialog=Method.Alert(activity);
+        session = new Session(this);
+        activity = FrontSignup.this;
+        dialog = Method.loading(activity);
+        alertDialog = Method.Alert(activity);
 
     }
 
@@ -64,30 +65,29 @@ public class FrontSignup extends AppCompatActivity {
     }
 
     private boolean validateData() {
-        boolean valid= true;
-        if(TextUtils.isEmpty(binding.username.getText().toString().trim())) {
+        boolean valid = true;
+        if (TextUtils.isEmpty(binding.username.getText().toString().trim())) {
             binding.username.setError(getResources().getString(R.string.error_username));
             valid = false;
         }
-        if(TextUtils.isEmpty(binding.email.getText().toString().trim())){
+        if (TextUtils.isEmpty(binding.email.getText().toString().trim())) {
             binding.email.setError(getResources().getString(R.string.error_invalid_email));
-            valid=false;
-        }
-        else if(!binding.email.getText().toString().trim().matches(emailPattern)){
+            valid = false;
+        } else if (!binding.email.getText().toString().trim().matches(emailPattern)) {
             binding.email.setError(getResources().getString(R.string.email_error));
-            valid=false;
+            valid = false;
         }
 
-        if(TextUtils.isEmpty(binding.phone.getText().toString().trim())) {
+        if (TextUtils.isEmpty(binding.phone.getText().toString().trim())) {
             binding.phone.setError(getResources().getString(R.string.error_phone));
             valid = false;
         }
 
-        if(TextUtils.isEmpty(binding.passwordText.getText().toString().trim())) {
+        if (TextUtils.isEmpty(binding.passwordText.getText().toString().trim())) {
             binding.passwordText.setError(getResources().getString(R.string.error_password));
             valid = false;
         }
-        if(binding.passwordText.getText().toString().trim().length()<5) {
+        if (binding.passwordText.getText().toString().trim().length() < 5) {
             binding.passwordText.setError("Enter Minimum 5 Digit or word password");
             valid = false;
         }
@@ -95,38 +95,38 @@ public class FrontSignup extends AppCompatActivity {
     }
 
     public void Signup(View view) {
-        if(!Method.isConnected(activity)){
+        if (!Method.isConnected(activity)) {
             showAlert(getString(R.string.no_internet));
         }
-        if(!validateData()){
+        if (!validateData()) {
             return;
-        }else {
-            reqSignup(binding.username.getText().toString().trim(),binding.email.getText().toString().trim(),binding.phone.getText().toString().trim(),binding.passwordText.getText().toString().trim(),binding.refer.getText().toString().trim());
+        } else {
+            reqSignup(binding.username.getText().toString().trim(), binding.email.getText().toString().trim(), binding.phone.getText().toString().trim(), binding.passwordText.getText().toString().trim(), binding.refer.getText().toString().trim());
         }
     }
 
-    private void reqSignup(String name, String email, String phone , String passowrd, String refer) {
+    private void reqSignup(String name, String email, String phone, String passowrd, String refer) {
         showDialog();
-        Constant_Api.API_TYPE="signup";
-        Constant_Api.P1=name;
-        Constant_Api.P2=email;
-        Constant_Api.P3=passowrd;
-        Constant_Api.P4=phone;
-        Constant_Api.P5=Method.deviceId(this);
-        Constant_Api.P6=refer;
+        Constant_Api.API_TYPE = "signup";
+        Constant_Api.P1 = name;
+        Constant_Api.P2 = email;
+        Constant_Api.P3 = passowrd;
+        Constant_Api.P4 = phone;
+        Constant_Api.P5 = Method.deviceId(this);
+        Constant_Api.P6 = refer;
         Call<SignupResponse> call = ApiClient.getClient(this).create(ApiInterface.class).Signup();
         call.enqueue(new Callback<SignupResponse>() {
             @Override
             public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                 dismissDialog();
-                if(response.isSuccessful() && response.body().getResponse()==201){
-                        session.saveUserData("",email,"","",passowrd,"","");
-                        session.setBoolean(session.LOGIN,true);
-                        Method.Success(activity,response.body().getMessage());
+                if (response.isSuccessful() && response.body().getResponse() == 201) {
+                    session.saveUserData("", email, "", "", passowrd, "", "");
+                    session.setBoolean(session.LOGIN, true);
+                    Method.Success(activity, response.body().getMessage());
                     Toast.makeText(FrontSignup.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(activity, FrontLogin.class);
-                        startActivity(intent);
-                }else{
+                    Intent intent = new Intent(activity, FrontLogin.class);
+                    startActivity(intent);
+                } else {
                     binding.msg.setText(response.body().getMessage());
                     binding.msg.setTextColor(Color.parseColor("#ff2200"));
                     showAlert(response.body().getMessage());
@@ -147,9 +147,9 @@ public class FrontSignup extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void showAlert(String msg){
+    void showAlert(String msg) {
         alertDialog.show();
-        TextView tv=alertDialog.findViewById(R.id.txt);
+        TextView tv = alertDialog.findViewById(R.id.txt);
         tv.setText(msg);
         alertDialog.findViewById(R.id.close).setOnClickListener(v -> {
             alertDialog.dismiss();

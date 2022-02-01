@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,104 +9,140 @@
 
     <include
         android:id="@+id/layout_toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <LinearLayout
-        android:layout_below="@id/layout_toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/layout_toolbar"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingEnd="10dp"
-        android:background="@drawable/bg_round"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/layoutspin"
-        tools:ignore="MissingConstraints,RtlSymmetry">
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/today_remaining_spin"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:fontFamily="@font/museo_regular"
-            android:padding="10dp"/>
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_round"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/layoutspin"
+            tools:ignore="MissingConstraints,RtlSymmetry">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/museo_regular"
+                android:padding="10dp"
+                android:text="@string/time_remaining"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/spinvideopoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/museo_semi_bold"
+                android:text="50"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/Relativespin"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_gradient"
+            android:backgroundTint="@color/colorAccent">
+
+            <rubikstudio.library.LuckyWheelView
+                android:id="@+id/luckyWheel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-25dp"
+                android:layout_marginBottom="8dp"
+                app:lkwBackgroundColor="@android:color/white"
+                app:lkwCenterImage="@drawable/coin"
+                app:lkwCursor="@drawable/triangle"
+                app:lkwTextColor="#F8F8F8">
+
+            </rubikstudio.library.LuckyWheelView>
+        </RelativeLayout>
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layoutspin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:ignore="MissingConstraints">
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.ornach.richtext.RichView
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="50"
-            android:id="@+id/spinvideopoint"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            app:rt_backgroundColor="#F2F4F6"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Relativespin"
+            app:rt_radius="3dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundMode="none"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat"
+                app:hintTextColor="@color/gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorAccent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.ornach.richtext.RichView>
+
+        <Button
+            android:id="@+id/join"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/btn_bg"
             android:fontFamily="@font/museo_semi_bold"
-             />
+            android:text="@string/join"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Relativespin"
+            app:layout_constraintVertical_bias="0.331" />
 
+
+        <include
+            android:id="@+id/layout_banner"
+            layout="@layout/banner" />
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/Relativespin"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg_gradient"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_gravity="center">
-
-        <rubikstudio.library.LuckyWheelView
-            android:id="@+id/luckyWheel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="-25dp"
-            android:layout_marginBottom="8dp"
-            app:lkwBackgroundColor="@android:color/white"
-            app:lkwCenterImage="@drawable/coin"
-            app:lkwCursor="@drawable/triangle"
-            app:lkwTextColor="#F8F8F8">
-
-        </rubikstudio.library.LuckyWheelView>
-    </RelativeLayout>
-
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/layoutspin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        tools:ignore="MissingConstraints">
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <Button
-        android:id="@+id/play"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/btn_bg"
-        android:text="@string/play"
-        android:fontFamily="@font/museo_semi_bold"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Relativespin"
-        app:layout_constraintVertical_bias="0.331" />
-
-
-    <include
-        android:id="@+id/layout_banner"
-        layout="@layout/banner"
-        />
-
-</LinearLayout>
 </RelativeLayout>

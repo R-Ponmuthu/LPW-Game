@@ -92,7 +92,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.6.1'
     implementation (name: 'unity-ads', ext: 'aar')
     implementation 'com.ankushgrover:Hourglass:2.0.0'
-
-
+    implementation ('io.socket:socket.io-client:0.8.3') {
+        exclude group: 'org.json', module: 'json'
+    }
 }
 apply plugin: 'com.google.gms.google-services'
