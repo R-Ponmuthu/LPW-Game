@@ -47,7 +47,7 @@ public class Games extends Fragment  implements MaxAdViewAdListener, MaxAdRevenu
         binding.recyclerViewApps.setLayoutManager(new GridLayoutManager(activity,2));
 
         callGame();
-        load_bannerads();
+//        load_bannerads();
 
         return binding.getRoot();
     }

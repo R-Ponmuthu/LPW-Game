@@ -47,7 +47,7 @@ public class AboutusActivity extends AppCompatActivity implements  MaxAdViewAdLi
         binding.company.setText(Constant_Api.ABOUT_COMPANY);
         binding.website.setText(Constant_Api.ABOUT_WEBSITE);
 
-        load_bannerads();
+//        load_bannerads();
 
         binding.telegram.setOnClickListener(v -> {
             Telegram();

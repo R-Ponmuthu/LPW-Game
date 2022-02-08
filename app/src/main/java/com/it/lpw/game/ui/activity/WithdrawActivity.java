@@ -97,10 +97,10 @@ public class WithdrawActivity extends AppCompatActivity  implements MaxAdViewAdL
                                 if(response.isSuccessful() && response.body().getSuccess()!=0){
                                     session.setIntData(session.WALLET,response.body().getBalance());
                                     redeemdialog.dismiss();
-                                    showvideoads();
+//                                    showvideoads();
                                     showbonus(response.body().getData(),"");
                                 }else {
-                                    showvideoads();
+//                                    showvideoads();
                                     showbonus(response.body().getData(),"error");
                                 }
                             }
@@ -117,7 +117,7 @@ public class WithdrawActivity extends AppCompatActivity  implements MaxAdViewAdL
             public void onLongClick(View view, int position) { }
         }));
 
-        load_bannerads();
+//        load_bannerads();
         if (Method.isConnected(this)){
             getdata();
         }else {

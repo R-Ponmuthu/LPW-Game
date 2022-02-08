@@ -62,6 +62,7 @@ public class SpinActivity extends AppCompatActivity implements MaxAdViewAdListen
     private AlertDialog bonus_dialog;
     private static int spin;
     private Socket mSocket;
+    private LuckyWheelView luckyWheelView;
 
     private Emitter.Listener onConnect = new Emitter.Listener() {
         public void call(Object... args) {
@@ -100,8 +101,20 @@ public class SpinActivity extends AppCompatActivity implements MaxAdViewAdListen
                     } else {
                         secs = String.valueOf(seconds);
                     }
-                    Log.e("Countdown", mins + ":" + secs);
+
                     spinvideopoint.setText(mins + ":" + secs);
+
+                    if (Integer.parseInt(countdown) <= 30000) {
+                        findViewById(R.id.join).setEnabled(false);
+                        findViewById(R.id.join).setAlpha(.5f);
+
+                        int index = getRandomIndex();
+                        luckyWheelView.startLuckyWheelWithTargetIndex(index);
+
+                    } else {
+                        findViewById(R.id.join).setEnabled(true);
+                        findViewById(R.id.join).setAlpha(1f);
+                    }
                 }
             });
         }
@@ -135,12 +148,12 @@ public class SpinActivity extends AppCompatActivity implements MaxAdViewAdListen
         bonus_dialog.getWindow().setBackgroundDrawableResource(R.color.transprent);
         bonus_dialog.getWindow().setWindowAnimations(R.style.Dialoganimation);
         bonus_dialog.setCanceledOnTouchOutside(false);
-        load_bannerads();
+//        load_bannerads();
 
         spinvideopoint = findViewById(R.id.spinvideopoint);
 //        checklimit();
 
-        final LuckyWheelView luckyWheelView = (LuckyWheelView) findViewById(R.id.luckyWheel);
+        luckyWheelView = (LuckyWheelView) findViewById(R.id.luckyWheel);
         findViewById(R.id.join).setEnabled(true);
         findViewById(R.id.join).setAlpha(1f);
 
@@ -221,7 +234,7 @@ public class SpinActivity extends AppCompatActivity implements MaxAdViewAdListen
                 points = Integer.parseInt(session.getData(session.POSITION8));
             }
 
-            showvideoads();
+//            showvideoads();
 
         });
     }

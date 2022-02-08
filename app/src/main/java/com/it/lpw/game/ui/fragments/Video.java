@@ -46,7 +46,7 @@ public class Video extends Fragment implements MaxAdViewAdListener, MaxAdRevenue
         activity=getActivity();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
         binding.toolbar.setText(Constant_Api.TITLE);
-        load_bannerads();
+//        load_bannerads();
 
         binding.back.setOnClickListener(v -> {
             load_fragment(new FragmentMain());

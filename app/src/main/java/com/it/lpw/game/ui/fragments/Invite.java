@@ -42,7 +42,7 @@ public class Invite extends Fragment  implements MaxAdViewAdListener, MaxAdReven
         session=new Session(getActivity());
         activity =getActivity();
 
-        load_bannerads();
+//        load_bannerads();
 
         binding.getRoot().setFocusableInTouchMode(true);
         binding.getRoot().requestFocus();

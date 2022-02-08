@@ -68,7 +68,7 @@ public class YTVideoActivity extends AppCompatActivity implements MaxAdViewAdLis
         activity=YTVideoActivity.this;
         dialog = Method.loading(this);
 
-        load_bannerads();
+//        load_bannerads();
 
         bonus_dialog = new AlertDialog.Builder(activity).setView(LayoutInflater.from(activity).inflate(R.layout.layout_collect_bonus, null)).create();
         bonus_dialog.getWindow().setBackgroundDrawableResource(R.color.transprent);
@@ -114,7 +114,7 @@ public class YTVideoActivity extends AppCompatActivity implements MaxAdViewAdLis
                         binding.tvTimer.setText("Completed");
                         binding.viewProgressBar.setVisibility(View.GONE);
                         if(reamintime==0){
-                            showvideoads();
+//                            showvideoads();
                         }else {
                             startActivity(new Intent(activity,RewardedAds.class));
                         }

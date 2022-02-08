@@ -177,7 +177,7 @@ public class PlayGames extends AppCompatActivity  implements  MaxAdViewAdListene
             }
             showContentWebView.stopLoading();
             finish();
-            showads();
+//            showads();
         });
 
         builder.setNegativeButton(getString(R.string.txt_no), (dialog, which) -> {

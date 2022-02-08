@@ -97,7 +97,7 @@ public class Task extends Fragment  implements  MaxAdViewAdListener, MaxAdRevenu
             load_fragment(new FragmentMain());
         });
 
-        load_bannerads();
+//        load_bannerads();
 
         list=new ArrayList<>();
         appdialog = new Dialog(getActivity());
@@ -242,7 +242,7 @@ public class Task extends Fragment  implements  MaxAdViewAdListener, MaxAdRevenu
             if(packageSent.trim().length() > 0){
                 boolean isAvailable = isAppInstalled(getActivity(), packageSent);
                 if(isAvailable){
-                    showvideoads();
+//                    showvideoads();
                 }
             }
         }

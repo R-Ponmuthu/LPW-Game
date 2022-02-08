@@ -76,7 +76,7 @@ public class HomeNew extends Fragment implements MaxAdViewAdListener, MaxAdReven
         list = new ArrayList<>();
 
         getOffers();
-        load_bannerads();
+//        load_bannerads();
         slideBanner();
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         binding.recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), binding.recyclerView, new RecyclerTouchListener.ClickListener() {
@@ -85,30 +85,30 @@ public class HomeNew extends Fragment implements MaxAdViewAdListener, MaxAdReven
                 String type = list.get(position).getType();
                 switch (type) {
                     case "daily":
-                        showvideoads();
+//                        showvideoads();
                         break;
                     case "spin":
-                        showInterAds();
+//                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
                         startActivity(new Intent(getActivity(), SpinActivity.class));
                         break;
                     case "web":
-                        showInterAds();
+//                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
                         startActivity(new Intent(getActivity(), WeburlActivity.class));
                         break;
                     case "video":
-                        showInterAds();
+//                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
                         loadFragment(new Video());
                         break;
                     case "reward":
-                        showInterAds();
+//                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
                         startActivity(new Intent(getActivity(), WithdrawActivity.class));
                         break;
                     case "task":
-                        showInterAds();
+//                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
                         loadFragment(new Task());
                         break;

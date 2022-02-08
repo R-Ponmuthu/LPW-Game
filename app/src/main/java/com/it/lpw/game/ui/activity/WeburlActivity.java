@@ -43,7 +43,7 @@ public class WeburlActivity extends AppCompatActivity implements MaxAdViewAdList
         setSupportActionBar(binding.layoutToolbar.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        load_bannerads();
+//        load_bannerads();
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         if (Method.isConnected(this)){

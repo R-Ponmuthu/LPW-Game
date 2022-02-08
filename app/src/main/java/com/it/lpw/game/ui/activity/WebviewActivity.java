@@ -74,7 +74,7 @@ public class WebviewActivity extends AppCompatActivity  implements MaxAdViewAdLi
         bonus_dialog.getWindow().setBackgroundDrawableResource(R.color.transprent);
         bonus_dialog.getWindow().setWindowAnimations(R.style.Dialoganimation);
         bonus_dialog.setCanceledOnTouchOutside(false);
-        load_bannerads();
+//        load_bannerads();
 
         webView = findViewById(R.id.webview);
         progressBar = findViewById(R.id.pb);
@@ -127,7 +127,7 @@ public class WebviewActivity extends AppCompatActivity  implements MaxAdViewAdLi
                 binding.viewProgressBar.setVisibility(View.GONE);
                 Log.e("TAG", "onreamintime: "+reamintime );
                 if(reamintime==0){
-                    showvideoads();
+//                    showvideoads();
                 }else {
                     startActivity(new Intent(activity,RewardedAds.class));
                 }
