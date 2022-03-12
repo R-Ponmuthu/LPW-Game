@@ -35,5 +35,7 @@ public interface WebApi {
          String UPDATE_PASSWORD =API+"update_password";
          String GAMES = API+"games";
          String CREDIT_GAME = API+"credit_game";
+         String JOIN_GAME = API+"join_game";
+         String UPDATE_GAME = API+"update_game";
     }
 }

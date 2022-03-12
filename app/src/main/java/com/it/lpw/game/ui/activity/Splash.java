@@ -52,6 +52,7 @@ public class Splash extends AppCompatActivity {
 
         if(Method.isConnected(this)){
             load_setting();
+//            doTask();
         }else{
             showAlert(getString(R.string.no_internet));
         }

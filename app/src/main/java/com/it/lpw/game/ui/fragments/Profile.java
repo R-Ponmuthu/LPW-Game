@@ -9,55 +9,53 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.it.lpw.game.R;
+import com.it.lpw.game.databinding.FragmentProfileBinding;
+import com.it.lpw.game.paytm.ui.PaytmDevActivity;
 import com.it.lpw.game.ui.activity.AboutusActivity;
 import com.it.lpw.game.ui.activity.FrontLogin;
 import com.it.lpw.game.ui.activity.WithdrawActivity;
 import com.it.lpw.game.util.Constant_Api;
-import com.it.lpw.game.util.Method;
-import com.it.lpw.game.R;
 import com.it.lpw.game.util.Session;
-import com.it.lpw.game.databinding.FragmentProfileBinding;
-import com.applovin.mediation.MaxAd;
-import com.applovin.mediation.MaxAdRevenueListener;
-import com.applovin.mediation.MaxAdViewAdListener;
-import com.applovin.mediation.MaxError;
-import com.applovin.mediation.ads.MaxAdView;
 
 public class Profile extends Fragment {
     FragmentProfileBinding binding;
     Session session;
     Activity activity;
     private AlertDialog dialog_logout;
+    int ActivityRequestCode = 1002;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding=FragmentProfileBinding.inflate(getLayoutInflater());
+        binding = FragmentProfileBinding.inflate(getLayoutInflater());
         session = new Session(getActivity());
-        activity=getActivity();
+        activity = getActivity();
 
         dialog_logout = new AlertDialog.Builder(activity).setView(LayoutInflater.from(activity).inflate(R.layout.layout_dialog, null)).create();
         dialog_logout.getWindow().setBackgroundDrawableResource(R.color.transprent);
         dialog_logout.getWindow().setWindowAnimations(R.style.Dialoganimation);
         dialog_logout.setCanceledOnTouchOutside(false);
 
-        binding.email.setText("Email : "+session.getData(session.EMAIL));
-        binding.username.setText("Name : "+session.getData(session.NAME));
-        binding.phone.setText("Phone : "+session.getData(session.PHONE));
+        binding.email.setText("Email : " + session.getData(session.EMAIL));
+        binding.username.setText("Name : " + session.getData(session.NAME));
+        binding.phone.setText("Phone : " + session.getData(session.PHONE));
 
         binding.getRoot().setFocusableInTouchMode(true);
         binding.getRoot().requestFocus();
         binding.getRoot().setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
                 FragmentMain NameofFragment = new FragmentMain();
-                FragmentTransaction transaction=getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container,NameofFragment);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, NameofFragment);
                 transaction.commit();
                 return true;
             }
@@ -71,7 +69,7 @@ public class Profile extends Fragment {
             startActivity(new Intent(getActivity(), AboutusActivity.class));
         });
 
-        binding.coin.setText(""+session.getIntData(session.WALLET));
+        binding.coin.setText("" + session.getIntData(session.WALLET));
 
         binding.cvFeedback.setOnClickListener(v -> {
             final String appName = getActivity().getPackageName();
@@ -99,7 +97,12 @@ public class Profile extends Fragment {
         });
 
         binding.cvPrivacy.setOnClickListener(v -> {
-            launchCustomTabs(activity,Constant_Api.PRIVACY_POLICY_URL);
+            launchCustomTabs(activity, Constant_Api.PRIVACY_POLICY_URL);
+        });
+
+        binding.cvAddCoins.setOnClickListener(v -> {
+
+            startActivity(new Intent(getActivity(), PaytmDevActivity.class));
         });
 
         return binding.getRoot();
@@ -109,7 +112,7 @@ public class Profile extends Fragment {
         dialog_logout.show();
         dialog_logout.findViewById(R.id.yes).setOnClickListener(v -> {
             session.Logout();
-            session.setBoolean(session.LOGIN,false);
+            session.setBoolean(session.LOGIN, false);
             startActivity(new Intent(getActivity(), FrontLogin.class));
             getActivity().finish();
         });
@@ -138,12 +141,18 @@ public class Profile extends Fragment {
     public static void launchCustomTabs(Activity activity, String url) {
         CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
         customIntent.setToolbarColor(ContextCompat.getColor(activity, R.color.colorPrimary));
-        customIntent.setExitAnimations(activity,R.anim.exit,R.anim.enter);
-        customIntent.setStartAnimations(activity,R.anim.enter,R.anim.exit);
+        customIntent.setExitAnimations(activity, R.anim.exit, R.anim.enter);
+        customIntent.setStartAnimations(activity, R.anim.enter, R.anim.exit);
         customIntent.setUrlBarHidingEnabled(true);
         customIntent.build().launchUrl(activity, Uri.parse(url));
 
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ActivityRequestCode && data != null) {
+            Toast.makeText(getActivity(), data.getStringExtra("nativeSdkForMerchantMessage") + data.getStringExtra("response"), Toast.LENGTH_SHORT).show();
+        }
+    }
 }

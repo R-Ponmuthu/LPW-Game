@@ -10,85 +10,84 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="false"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="m"
-        tools:replace="android:allowBackup">
-
-        <activity android:name=".ui.activity.IntroActivity"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup"
+        tools:targetApi="m">
+        <activity
+            android:name=".ui.activity.IntroActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />
-
-        <activity android:name=".ui.activity.RewardedAds"
+        <activity
+            android:name=".ui.activity.RewardedAds"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />
-
-        <activity android:name=".ui.activity.InterAds"
+        <activity
+            android:name=".ui.activity.InterAds"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />
-
-        <activity android:name=".ui.activity.PlayGames"
+        <activity
+            android:name=".ui.activity.PlayGames"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />
-
-        <activity android:name=".ui.activity.OtpVerification"
+        <activity
+            android:name=".ui.activity.OtpVerification"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".ui.activity.AboutusActivity"
+        <activity
+            android:name=".ui.activity.AboutusActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:label="About us"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".ui.activity.YTVideoActivity"
+        <activity
+            android:name=".ui.activity.YTVideoActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:label="Watch Video"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".ui.activity.WebviewActivity"
+        <activity
+            android:name=".ui.activity.WebviewActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/AppTheme.NoTitle"/>
-
-        <activity android:name=".ui.activity.WeburlActivity"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".ui.activity.WeburlActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:label="Visit &amp; Earn"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".ui.activity.WithdrawActivity"
+        <activity
+            android:name=".ui.activity.WithdrawActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:label="Redeem"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ui.activity.Splash"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/AppTheme.NoTitle"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme.NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activity.MainActivity"
-            android:label="@string/app_name"
             android:configChanges="screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/app_name"
             android:launchMode="singleTask"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.FrontLogin"
             android:configChanges="screenSize|screenLayout|keyboardHidden"
-            android:screenOrientation="portrait"
             android:label="SignIn"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".ui.activity.FrontSignup"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
@@ -98,25 +97,47 @@
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".ui.activity.SpinActivity"
-            android:label="Spin and Win"
+            android:name=".ui.activity.SpinColorActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:label="Spin and Win"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity
+            android:name=".ui.activity.SpinNumbersActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:label="Spin and Win"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.SpinGamesTypesActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:label="Spin and Win"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".paytm.ui.PaytmDevActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:label="Add Cash"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <service
             android:name=".ui.activity.PushNotificationService"
             android:exported="false"
             tools:ignore="Instantiatable">
             <intent-filter>
-                <action
-                    android:name="com.google.firebase.MESSAGING_EVENT">
-                </action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <meta-data android:name="applovin.sdk.key"
-            android:value="@string/APPLOVIN_SDK_KEY"  />
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="@string/APPLOVIN_SDK_KEY" />
     </application>
+
 </manifest>

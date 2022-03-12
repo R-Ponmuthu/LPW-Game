@@ -99,7 +99,7 @@
                 android:id="@+id/chooseOption"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:entries="@array/colours"
+                android:entries="@array/numbers"
                 android:theme="@style/Spinner" />
 
         </com.ornach.richtext.RichView>
@@ -128,38 +128,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin_10dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_10dp">
 
-            <ImageView
+            <TextView
                 android:id="@+id/match1"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:src="@drawable/drawable_white"
-                android:gravity="center_horizontal" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/drawable_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp" />
 
-            <ImageView
+            <TextView
                 android:id="@+id/match2"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_10dp"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:gravity="center_horizontal"
-                android:src="@drawable/drawable_white"
-                android:layout_marginLeft="@dimen/margin_10dp"/>
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/drawable_white"
+                android:gravity="center"
 
-            <ImageView
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp" />
+
+            <TextView
                 android:id="@+id/match3"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_10dp"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:gravity="center_horizontal"
-                android:src="@drawable/drawable_white"
-                android:layout_marginLeft="@dimen/margin_10dp"/>
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/drawable_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_16sp" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>

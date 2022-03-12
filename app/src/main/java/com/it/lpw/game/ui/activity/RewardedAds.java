@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.adcolony.sdk.AdColony;
 import com.adcolony.sdk.AdColonyAdOptions;
@@ -100,7 +99,7 @@ public class RewardedAds extends Activity  implements MaxRewardedAdListener, Max
         if(dialog.isShowing()){dialog.dismiss();}
         finish();
         if(Constant_Api.ADTYPE.equals("spin")){
-            SpinActivity.creditbal=true;
+            SpinColorActivity.creditbal=true;
         }else if(Constant_Api.ADTYPE.equals("daily")){
             HomeNew.creditbal=true;
         }else if(Constant_Api.ADTYPE.equals("web")){

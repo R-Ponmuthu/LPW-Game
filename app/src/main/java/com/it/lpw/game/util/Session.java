@@ -56,6 +56,7 @@ public class Session {
     public   final String PC_6="pc_6";
     public   final String PC_7="pc_7";
     public   final String PC_8="pc_8";
+    public   final String GAME_TYPE="game_type";
 
 
     @SuppressLint("CommitPrefEdits")
@@ -76,6 +77,15 @@ public class Session {
 
     public String User_id() {
         return pref.getString(USER_ID, "");
+    }
+
+    public void setGameId(){
+        editor.putString(GAME_TYPE, String.valueOf(System.currentTimeMillis()));
+        editor.apply();
+    }
+
+    public String getGameId(){
+        return pref.getString(GAME_TYPE, "");
     }
 
     public void setData(String id, String val) {

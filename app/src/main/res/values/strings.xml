@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reward App</string>
+    <string name="app_name">LPW Games</string>
     <string name="app_name_part_one" translatable="false">Reward</string>
     <string name="app_name_part_two" translatable="false">App</string>
 
@@ -48,6 +48,7 @@
     <string name="my_network">My Network</string>
     <string name="notifications">Notifications</string>
     <string name="history">History</string>
+    <string name="add_coin">Add Coins</string>
     <string name="feedback">Feedback</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="about_us">About us</string>
@@ -138,8 +139,10 @@
     <string name="txt_no" translatable="false">No</string>
     <string name="txt_this_function_is_not_support_here" translatable="false">This function is not support here.</string>
     <string name="Top_picks">Top Picks</string>
+    <string name="Earn_Cash">Earn Cash</string>
     <string name="play_zone">PlayZone</string>
     <string name="history_subtitle"><![CDATA[Wallet history & Reward history]]></string>
+    <string name="add_coin_subtitle"><![CDATA[Add Coins to your wallet]]></string>
     <string name="rewards_subtitle"><![CDATA[Collect Reward & Gift Card]]></string>
     <string name="contact_us_subtitle"><![CDATA[Contact us & send your Feedback]]></string>
     <string name="feedback_subtitle">"submit your feedback "</string>
@@ -154,5 +157,36 @@
     <string name="update">Update</string>
     <string name="update_available">New Update Available</string>
     <string name="refer_code">Referral Code</string>
+    <string name="prize_pool">Prize Pool</string>
+    <string name="entry">Entry</string>
+    <string name="_10_points">10 Coins</string>
+    <string name="_25_points">25 Coins</string>
+    <string name="_20_points">20 Coins</string>
+    <string name="_100_points">100 Coins</string>
+    <string name="_500_points">500 Coins</string>
+    <string name="_1000_points">1000 Coins</string>
+
+
+    <string-array name="colours">
+        <item>Red</item>
+        <item>Pink</item>
+        <item>Purple</item>
+        <item>Indigo</item>
+        <item>Blue</item>
+        <item>Teal</item>
+        <item>Black</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="numbers">
+        <item>5</item>
+        <item>12</item>
+        <item>8</item>
+        <item>25</item>
+        <item>1</item>
+        <item>36</item>
+        <item>18</item>
+        <item>44</item>
+    </string-array>
 
 </resources>

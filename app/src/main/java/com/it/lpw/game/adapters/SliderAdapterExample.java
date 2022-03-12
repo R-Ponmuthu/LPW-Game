@@ -12,12 +12,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.it.lpw.game.BuildConfig;
-import com.it.lpw.game.Config.Config;
 import com.it.lpw.game.R;
 import com.it.lpw.game.Responsemodel.BannerResponse;
 import com.it.lpw.game.restApi.WebApi;
-import com.it.lpw.game.ui.activity.SpinActivity;
+import com.it.lpw.game.ui.activity.SpinColorActivity;
 import com.it.lpw.game.ui.activity.WeburlActivity;
 import com.it.lpw.game.ui.fragments.Invite;
 import com.it.lpw.game.ui.fragments.Video;
@@ -79,7 +77,7 @@ public class SliderAdapterExample extends
                 } catch (Exception e) {
                 }
             } else if (type.equals(Constant_Api.BANNER_SPIN)) {
-                Intent start = new Intent(viewHolder.itemView.getContext(), SpinActivity.class);
+                Intent start = new Intent(viewHolder.itemView.getContext(), SpinColorActivity.class);
                 viewHolder.itemView.getContext().startActivity(start);
             }else if (type.equals("video")) {
                 AppCompatActivity activity = (AppCompatActivity) viewHolder.itemView.getContext();

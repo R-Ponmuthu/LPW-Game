@@ -1,30 +1,53 @@
 package com.it.lpw.game.ui.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.gson.Gson;
+import com.it.lpw.game.BuildConfig;
 import com.it.lpw.game.R;
-import com.it.lpw.game.Responsemodel.BonusResponse;
 import com.it.lpw.game.Responsemodel.CreditResponse;
 import com.it.lpw.game.adapters.ViewpagerAdapter;
 import com.it.lpw.game.databinding.FragmentMainBinding;
+import com.it.lpw.game.paytm.PaytmUtil;
+import com.it.lpw.game.paytm.beans.ChecksumResponse;
+import com.it.lpw.game.paytm.PaytmChecksum;
+import com.it.lpw.game.paytm.ui.PaytmDevActivity;
 import com.it.lpw.game.restApi.ApiClient;
 import com.it.lpw.game.restApi.ApiInterface;
+import com.it.lpw.game.ui.activity.SpinGamesTypesActivity;
 import com.it.lpw.game.util.Method;
 import com.it.lpw.game.util.Session;
 import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
+import com.paytm.pgsdk.PaytmOrder;
+import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
+import com.paytm.pgsdk.TransactionManager;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,6 +60,17 @@ public class FragmentMain extends Fragment {
     private ViewPager viewPager;
     Session session;
     boolean doubleBackToExitPressedOnce = false;
+    RelativeLayout layoutCoin;
+    String custid, orderId;
+    int ActivityRequestCode = 1002;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +83,7 @@ public class FragmentMain extends Fragment {
 
         viewPager = binding.catviewpager;
         tabLayout = binding.tablayout;
+        layoutCoin = binding.layoutCoin;
         catadapter = new ViewpagerAdapter(getChildFragmentManager());
         catadapter.AddFragment(new HomeNew(), "test");
         catadapter.AddFragment(new Games(), "test");
@@ -56,7 +91,7 @@ public class FragmentMain extends Fragment {
         viewPager.setOffscreenPageLimit(1);
 
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setText(getString(R.string.Top_picks));
+        tabLayout.getTabAt(0).setText(getString(R.string.Earn_Cash));
         tabLayout.getTabAt(1).setText(getString(R.string.play_zone));
 
 
@@ -85,7 +120,9 @@ public class FragmentMain extends Fragment {
         });
 
         binding.layoutCoin.setOnClickListener(v -> {
-            loadFragment(new Coins());
+//            loadFragment(new Coins());
+
+            startActivity(new Intent(getActivity(), PaytmDevActivity.class));
         });
 
         return binding.getRoot();
@@ -130,6 +167,4 @@ public class FragmentMain extends Fragment {
             }
         });
     }
-
-
 }

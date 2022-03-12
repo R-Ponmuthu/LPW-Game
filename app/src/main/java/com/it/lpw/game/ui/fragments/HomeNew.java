@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.it.lpw.game.Responsemodel.BannerResponse;
-import com.it.lpw.game.Responsemodel.BonusResponse;
 import com.it.lpw.game.Responsemodel.CreditResponse;
 import com.it.lpw.game.Responsemodel.OfferResponse;
 import com.it.lpw.game.adapters.OfferAdapter;
@@ -24,7 +23,7 @@ import com.it.lpw.game.restApi.ApiClient;
 import com.it.lpw.game.restApi.ApiInterface;
 import com.it.lpw.game.ui.activity.InterAds;
 import com.it.lpw.game.ui.activity.RewardedAds;
-import com.it.lpw.game.ui.activity.SpinActivity;
+import com.it.lpw.game.ui.activity.SpinGamesTypesActivity;
 import com.it.lpw.game.ui.activity.WeburlActivity;
 import com.it.lpw.game.ui.activity.WithdrawActivity;
 import com.it.lpw.game.util.Constant_Api;
@@ -87,10 +86,15 @@ public class HomeNew extends Fragment implements MaxAdViewAdListener, MaxAdReven
                     case "daily":
 //                        showvideoads();
                         break;
-                    case "spin":
+                    case "spincolor":
 //                        showInterAds();
                         Constant_Api.TITLE = list.get(position).getOfferTitle();
-                        startActivity(new Intent(getActivity(), SpinActivity.class));
+                        startActivity(new Intent(getActivity(), SpinGamesTypesActivity.class).putExtra("GameType", "Color"));
+                        break;
+                    case "spinnumbers":
+//                        showInterAds();
+                        Constant_Api.TITLE = list.get(position).getOfferTitle();
+                        startActivity(new Intent(getActivity(), SpinGamesTypesActivity.class).putExtra("GameType", "Number"));
                         break;
                     case "web":
 //                        showInterAds();

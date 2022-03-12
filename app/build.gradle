@@ -19,14 +19,31 @@ android {
         resConfigs "en", "fr"
         multiDexEnabled true
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true;
     }
     buildTypes {
         release {
             minifyEnabled false  // shrink
             shrinkResources false
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "PAYTM_MID", '"bGqUdL93802970300350"'
+            buildConfigField "String", "URL", '"https://securegw.paytm.in"'
+            buildConfigField "String", "VERIFY_URL", '"https://pguat.paytm.com/paytmchecksum/paytmCallback.jsp"'
+            buildConfigField "String", "MERCHANT_KEY", '"%r%UNtF7SIMHYK%4"'
+            buildConfigField "String", "TRANSFER",'"https://staging-dashboard.paytm.com/bpay/api/v1/disburse/order/bank"'
+        }
+
+        debug {
+
+            debuggable true
+            buildConfigField "String", "PAYTM_MID", '"bGqUdL93802970300350"'
+            buildConfigField "String", "VERIFY_URL", '"https://pguat.paytm.com/paytmchecksum/paytmCallback.jsp"'
+            buildConfigField "String", "URL", '"https://securegw-stage.paytm.in"'
+            buildConfigField "String", "MERCHANT_KEY", '"%r%UNtF7SIMHYK%4"'
+            buildConfigField "String", "TRANSFER",'"https://dashboard.paytm.com/bpay/api/v1/disburse/order/bank"'
         }
     }
     lintOptions {
@@ -42,8 +59,8 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField 'String', 'API', API_URL;
-        it.buildConfigField 'String', 'API_KEY', API_KEY;
+        it.buildConfigField 'String', 'API', API_URL
+        it.buildConfigField 'String', 'API_KEY', API_KEY
     }
 }
 
@@ -90,10 +107,16 @@ dependencies {
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.omjoonkim.library:skeleton-loading-view:0.1.1'
     implementation 'com.airbnb.android:lottie:3.6.1'
-    implementation (name: 'unity-ads', ext: 'aar')
+    implementation(name: 'unity-ads', ext: 'aar')
     implementation 'com.ankushgrover:Hourglass:2.0.0'
-    implementation ('io.socket:socket.io-client:0.8.3') {
+    implementation('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
     }
+
+    implementation('com.paytm.appinvokesdk:appinvokesdk:1.6.8') {
+        exclude group: "com.squareup.okhttp3", module: 'okhttp3'
+    }
+
+//    implementation 'com.paytm:paytm-checksum:1.2.0'
 }
 apply plugin: 'com.google.gms.google-services'

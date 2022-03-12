@@ -48,13 +48,13 @@
             android:focusable="true">
 
             <ImageView
+                android:id="@+id/refresh"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:id="@+id/refresh"
-                android:src="@drawable/ic_baseline_autorenew_24"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_baseline_autorenew_24"
                 app:tint="@color/white" />
 
             <RelativeLayout
@@ -67,6 +67,7 @@
                 android:padding="8dp"
                 android:layout_height="wrap_content"
                 tools:ignore="UnusedAttribute">
+
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
@@ -78,16 +79,15 @@
                     android:id="@+id/coins"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/img_dollar"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@id/img_dollar"
-                    android:layout_alignBaseline="@+id/img_dollar"
-                    android:textColor="@android:color/white"
-                    android:text="@string/_0"
-                    android:fontFamily="@font/museo_semi_bold
-"
+                    android:fontFamily="@font/museo_semi_bold"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textSize="16sp"/>
+                    android:text="@string/_0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
             </RelativeLayout>
 
         </RelativeLayout>
@@ -127,10 +127,10 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:layout_below="@id/appbar_reward_point_fragment"
         android:id="@+id/catviewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/appbar_reward_point_fragment"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </RelativeLayout>

@@ -79,7 +79,6 @@ public class FrontLogin extends AppCompatActivity {
         pass_Reset.getWindow().setBackgroundDrawableResource(R.color.transparent);
         pass_Reset.getWindow().setWindowAnimations(R.style.Dialoganimation);
         pass_Reset.setCancelable(false);
-
     }
 
     private boolean validateData() {

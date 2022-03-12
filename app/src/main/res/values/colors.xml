@@ -3,6 +3,7 @@
 
     <color name="colorPrimary">#2B295A</color>
     <color name="colorPrimaryDark">#4C4582</color>
+    <color name="menu_background">#6D4C4582</color>
     <color name="colorAccent">#21E8AC</color>
 
     <color name="bottomNavigationTextColor">#B2B2B2</color>

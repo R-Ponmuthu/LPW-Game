@@ -8,6 +8,7 @@ import com.it.lpw.game.Responsemodel.CheckResponse;
 import com.it.lpw.game.Responsemodel.CreditResponse;
 import com.it.lpw.game.Responsemodel.GameResponse;
 import com.it.lpw.game.Responsemodel.HistoryResponse;
+import com.it.lpw.game.Responsemodel.JoinGameResponse;
 import com.it.lpw.game.Responsemodel.LoginResponse;
 import com.it.lpw.game.Responsemodel.OfferResponse;
 import com.it.lpw.game.Responsemodel.RedeemResponse;
@@ -16,6 +17,7 @@ import com.it.lpw.game.Responsemodel.SignupResponse;
 import com.it.lpw.game.Responsemodel.SpinResponse;
 import com.it.lpw.game.Responsemodel.VideoResponse;
 import com.it.lpw.game.Responsemodel.WebResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -56,7 +58,7 @@ public interface ApiInterface {
 
     @POST(WebApi.Api.VERIFY_OTP)
     Call<BonusResponse> Verify_OTP(@Query("otp") String otp,
-                              @Query("email") String email);
+                                   @Query("email") String email);
 
     @POST(WebApi.Api.RESET_PASSWORD)
     Call<BonusResponse> ResetPass(@Query("email") String email);
@@ -82,8 +84,10 @@ public interface ApiInterface {
 
     @GET(WebApi.Api.CREDIT_SPIN)
     Call<CreditResponse> CreditSpin();
+
     @GET(WebApi.Api.CREDIT_VIDEO)
     Call<CreditResponse> CreditVideo();
+
     @GET(WebApi.Api.CREDIT_WEB)
     Call<CreditResponse> CreditWeb();
 
@@ -99,5 +103,9 @@ public interface ApiInterface {
     @GET(WebApi.Api.CREDIT_GAME)
     Call<CreditResponse> GameReward();
 
+    @POST(WebApi.Api.JOIN_GAME)
+    Call<JoinGameResponse> JoinGame();
 
+    @POST(WebApi.Api.UPDATE_GAME)
+    Call<JoinGameResponse> UpdateGame();
 }

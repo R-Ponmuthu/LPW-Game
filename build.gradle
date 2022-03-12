@@ -1,4 +1,3 @@
-
 buildscript {
 
     repositories {
@@ -20,6 +19,12 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+        maven {
+            url "https://artifactory.paytm.in/libs-release-local"
+        }
+//        maven {
+//            url "http://artifactorypg.paytm.in/artifactory/libs-release"
+//        }
         flatDir {
             dirs 'libs'
         }
