@@ -25,8 +25,6 @@ import com.it.lpw.game.restApi.ApiClient;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.startapp.sdk.ads.banner.Banner;
-import com.unity3d.services.banners.BannerView;
-import com.unity3d.services.banners.UnityBannerSize;
 
 import java.io.UnsupportedEncodingException;
 import java.net.NetworkInterface;
@@ -76,13 +74,6 @@ public class Method {
         String android_id = Settings.Secure.getString(ctx.getContentResolver(), Settings.Secure.ANDROID_ID);
         String deviceId = md5(android_id).toUpperCase();
         return deviceId;
-    }
-
-    public static void UNITY_Banner(Activity context, RelativeLayout adContainer) {
-        BannerView topBanner = new BannerView(context, Constant_Api.BANNER_ID, new UnityBannerSize(320, 50));
-        topBanner.setListener(IListener.bannerListener);
-        topBanner.load();
-        adContainer.addView(topBanner);
     }
 
     private static int getRandomSalt() {

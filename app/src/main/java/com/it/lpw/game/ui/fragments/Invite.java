@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.it.lpw.game.ui.activity.InterAds;
 import com.it.lpw.game.util.Constant_Api;
 import com.it.lpw.game.R;
 import com.it.lpw.game.util.Method;

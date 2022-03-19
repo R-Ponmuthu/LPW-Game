@@ -22,10 +22,7 @@ import com.applovin.mediation.MaxAdRevenueListener;
 import com.applovin.mediation.MaxAdViewAdListener;
 import com.applovin.mediation.MaxError;
 import com.applovin.mediation.ads.MaxAdView;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.banners.IUnityBannerListener;
-import com.unity3d.services.banners.UnityBanners;
-import com.unity3d.services.banners.view.BannerPosition;
+
 
 public class AboutusActivity extends AppCompatActivity implements  MaxAdViewAdListener,MaxAdRevenueListener {
     ActivityAboutusBinding binding;

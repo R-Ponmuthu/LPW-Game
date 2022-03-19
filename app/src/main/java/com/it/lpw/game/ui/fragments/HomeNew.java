@@ -21,7 +21,6 @@ import com.it.lpw.game.adapters.OfferAdapter;
 import com.it.lpw.game.adapters.SliderAdapterExample;
 import com.it.lpw.game.restApi.ApiClient;
 import com.it.lpw.game.restApi.ApiInterface;
-import com.it.lpw.game.ui.activity.InterAds;
 import com.it.lpw.game.ui.activity.RewardedAds;
 import com.it.lpw.game.ui.activity.SpinGamesTypesActivity;
 import com.it.lpw.game.ui.activity.WeburlActivity;

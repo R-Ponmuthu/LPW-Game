@@ -41,7 +41,6 @@ import com.it.lpw.game.ui.fragments.Invite;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.startapp.sdk.adsbase.StartAppAd;
 import com.startapp.sdk.adsbase.StartAppSDK;
-import com.unity3d.ads.UnityAds;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -60,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
         StartAppSDK.init(this, Constant_Api.STARTAPP_ID, false);
         StartAppAd.disableSplash();
-
-        UnityAds.initialize(this, Constant_Api.UNITY_GAMEID, false);
 
         AppLovinSdk.getInstance(this).setMediationProvider("max");
         AppLovinSdk.initializeSdk(this, configuration -> {

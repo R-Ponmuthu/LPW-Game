@@ -23,10 +23,7 @@ import com.applovin.mediation.MaxReward;
 import com.applovin.mediation.MaxRewardedAdListener;
 import com.applovin.mediation.ads.MaxRewardedAd;
 import com.startapp.sdk.adsbase.StartAppAd;
-import com.unity3d.ads.IUnityAdsLoadListener;
-import com.unity3d.ads.IUnityAdsShowListener;
-import com.unity3d.ads.UnityAds;
-import com.unity3d.ads.UnityAdsShowOptions;
+
 
 public class RewardedAds extends Activity  implements MaxRewardedAdListener, MaxAdViewAdListener, MaxAdRevenueListener {
     private ProgressDialog dialog;
@@ -42,7 +39,6 @@ public class RewardedAds extends Activity  implements MaxRewardedAdListener, Max
         super.onCreate(bundle);
 
         adUnitId = Constant_Api.UNITY_REWARD_ID;
-        UnityAds.load(adUnitId, loadListener);
         startapp();
 
        if(Constant_Api.APPLOVIN_REWARD){
@@ -76,7 +72,6 @@ public class RewardedAds extends Activity  implements MaxRewardedAdListener, Max
         new Handler().postDelayed(() -> {
             if(Constant_Api.UNITY_REWARD && unityadsready){
                 dismisdialog();
-                UnityAds.show(this, adUnitId, new UnityAdsShowOptions(), showListener);
             }else if(Constant_Api.APPLOVIN_REWARD && rewardedAd.isReady()){
                 dismisdialog();
                 rewardedAd.showAd(Constant_Api.APPLOVIN_REWARD_ID);
@@ -116,40 +111,6 @@ public class RewardedAds extends Activity  implements MaxRewardedAdListener, Max
         rewardedVideo.loadAd(StartAppAd.AdMode.AUTOMATIC);
     }
 
-    private IUnityAdsLoadListener loadListener = new IUnityAdsLoadListener() {
-        @Override
-        public void onUnityAdsAdLoaded(String placementId) {
-            unityadsready=true;
-        }
-
-        @Override
-        public void onUnityAdsFailedToLoad(String placementId, UnityAds.UnityAdsLoadError error, String message) {
-            Log.e("UnityAdsExample", "Unity Ads failed to load ad for " + placementId + " with error: [" + error + "] " + message);
-        }
-    };
-
-    private IUnityAdsShowListener showListener = new IUnityAdsShowListener() {
-        @Override
-        public void onUnityAdsShowFailure(String placementId, UnityAds.UnityAdsShowError error, String message) {
-            Log.e("UnityAdsExample", "Unity Ads failed to show ad for " + placementId + " with error: [" + error + "] " + message);
-        }
-
-        @Override
-        public void onUnityAdsShowStart(String placementId) {
-            Log.v("UnityAdsExample", "onUnityAdsShowStart: " + placementId);
-        }
-
-        @Override
-        public void onUnityAdsShowClick(String placementId) {
-            Log.v("UnityAdsExample", "onUnityAdsShowClick: " + placementId);
-        }
-
-        @Override
-        public void onUnityAdsShowComplete(String placementId, UnityAds.UnityAdsShowCompletionState state) {
-            Log.v("UnityAdsExample", "onUnityAdsShowComplete: " + placementId);
-            nextproces();
-        }
-    };
 
     @Override
     public void onAdRevenuePaid(MaxAd ad) {}

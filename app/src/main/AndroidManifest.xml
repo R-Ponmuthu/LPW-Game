@@ -28,10 +28,6 @@
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />
         <activity
-            android:name=".ui.activity.InterAds"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/AppTheme.NoTitle" />
-        <activity
             android:name=".ui.activity.PlayGames"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:theme="@style/AppTheme.NoTitle" />

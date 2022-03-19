@@ -13,7 +13,7 @@
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
         app:riv_corner_radius="15dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@mipmap/ic_launcher" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="100dp"
