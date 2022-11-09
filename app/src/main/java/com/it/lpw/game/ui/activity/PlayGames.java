@@ -269,9 +269,6 @@ public class PlayGames extends AppCompatActivity  implements  MaxAdViewAdListene
         if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_STARTAPP)){
             Method.STARTAPP_Banner(activity,binding.ad.BANNER);
         }
-        else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_UNITY)){
-            Method.UNITY_Banner(activity,binding.ad.BANNER);
-        }
         else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_APPLOVIN)){
             adView = new MaxAdView(Constant_Api.BANNER_ID,this);
             adView.setListener( this );

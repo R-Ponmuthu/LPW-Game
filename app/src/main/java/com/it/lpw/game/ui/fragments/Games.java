@@ -99,9 +99,6 @@ public class Games extends Fragment  implements MaxAdViewAdListener, MaxAdRevenu
         if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_STARTAPP)){
             Method.STARTAPP_Banner(getActivity(),binding.layoutBanner.BANNER);
         }
-        else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_UNITY)){
-            Method.UNITY_Banner(getActivity(),binding.layoutBanner.BANNER);
-        }
         else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_APPLOVIN)){
             adView = new MaxAdView(Constant_Api.BANNER_ID,getActivity());
             adView.setListener( this );

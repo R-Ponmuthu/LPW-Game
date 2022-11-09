@@ -83,7 +83,7 @@ public class WeburlActivity extends AppCompatActivity implements MaxAdViewAdList
             Method.STARTAPP_Banner(activity,binding.layoutBanner.BANNER);
         }
         else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_UNITY)){
-            Method.UNITY_Banner(activity,binding.layoutBanner.BANNER);
+//            Method.UNITY_Banner(activity,binding.layoutBanner.BANNER);
         }
         else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_APPLOVIN)){
             adView = new MaxAdView(Constant_Api.BANNER_ID,this);

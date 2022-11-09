@@ -38,7 +38,7 @@ public interface ApiInterface {
     @GET(WebApi.Api.SLIDE_BANNER)
     Call<BannerResponse> SLideBanner();
 
-    @GET(WebApi.Api.GAMES)
+    @POST(WebApi.Api.GAMES)
     Call<GameResponse> getGame();
 
     @GET(WebApi.Api.VIDEOS)
@@ -50,7 +50,7 @@ public interface ApiInterface {
     @GET(WebApi.Api.CREDIT_DAILY)
     Call<CreditResponse> getDailyCheckin();
 
-    @POST(WebApi.Api.Login)
+    @GET(WebApi.Api.Login)
     Call<LoginResponse> Login();
 
     @POST(WebApi.Api.SIGNUP)

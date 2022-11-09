@@ -264,6 +264,25 @@ public class Method {
         return false;
     }
 
+    public static String decryption(String coded) {
+        byte[] valueDecoded = new byte[0];
+        try {
+            valueDecoded = Base64.encode(coded.getBytes("UTF-8"), Base64.DEFAULT);
+        } catch (UnsupportedEncodingException e) {
+        }
+        return new String(valueDecoded);
+    }
+
+    public static String decrypt(String coded) {
+        coded = decryption(coded);
+        byte[] valueDecoded = new byte[0];
+        try {
+            valueDecoded = Base64.encode(coded.getBytes("UTF-8"), Base64.DEFAULT);
+        } catch (UnsupportedEncodingException e) {
+        }
+        return new String(valueDecoded);
+    }
+
     public static String encryption(String coded) {
         byte[] valueDecoded = new byte[0];
         try {

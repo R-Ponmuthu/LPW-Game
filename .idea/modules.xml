@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LPW-Game.iml" filepath="$PROJECT_DIR$/.idea/modules/LPW-Game.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LPW-Game.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LPW-Game.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/luckyWheel/LPW-Game.luckyWheel.iml" filepath="$PROJECT_DIR$/.idea/modules/luckyWheel/LPW-Game.luckyWheel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Neuway-Game.iml" filepath="$PROJECT_DIR$/.idea/modules/Neuway-Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Neuway-Game.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.iml" filepath="$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/luckyWheel/Neuway-Game.luckyWheel.unitTest.iml" />
     </modules>
   </component>
 </project>

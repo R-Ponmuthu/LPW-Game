@@ -206,8 +206,6 @@ public class HomeNew extends Fragment implements MaxAdViewAdListener, MaxAdReven
     private void load_bannerads() {
         if (Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_STARTAPP)) {
             Method.STARTAPP_Banner(getActivity(), binding.layoutBanner.BANNER);
-        } else if (Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_UNITY)) {
-            Method.UNITY_Banner(getActivity(), binding.layoutBanner.BANNER);
         } else if (Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_APPLOVIN)) {
             adView = new MaxAdView(Constant_Api.BANNER_ID, getActivity());
             adView.setListener(this);
@@ -221,15 +219,6 @@ public class HomeNew extends Fragment implements MaxAdViewAdListener, MaxAdReven
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
         transaction.commit();
-    }
-
-    private void showInterAds() {
-        Constant_Api.COUNT = Constant_Api.COUNT + 1;
-        if (Constant_Api.COUNT >= Constant_Api.INTER_COUNT) {
-            if (Constant_Api.INTERSTITIAL) {
-                startActivity(new Intent(getActivity(), InterAds.class));
-            }
-        }
     }
 
     @Override

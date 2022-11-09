@@ -74,7 +74,7 @@ public class Invite extends Fragment  implements MaxAdViewAdListener, MaxAdReven
                     "Download link: https://play.google.com/store/apps/details?id="+getActivity().getPackageName());
             sendInt.setType("text/plain");
             startActivity(Intent.createChooser(sendInt, "Share"));
-            startActivity(new Intent(getActivity(), InterAds.class));
+//            startActivity(new Intent(getActivity(), InterAds.class));
         });
 
 
@@ -103,9 +103,6 @@ public class Invite extends Fragment  implements MaxAdViewAdListener, MaxAdReven
     private void load_bannerads() {
         if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_STARTAPP)){
             Method.STARTAPP_Banner(getActivity(),binding.layoutBanner.BANNER);
-        }
-        else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_UNITY)){
-            Method.UNITY_Banner(getActivity(),binding.layoutBanner.BANNER);
         }
         else if(Constant_Api.BANNER_TYPE.equals(Constant_Api.BANNER_TYPE_APPLOVIN)){
             adView = new MaxAdView(Constant_Api.BANNER_ID,getActivity());

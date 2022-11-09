@@ -1,7 +1,9 @@
 package com.it.lpw.game.restApi;
 
 import android.app.Activity;
+import android.util.Log;
 
+import com.it.lpw.game.BuildConfig;
 import com.it.lpw.game.util.Method;
 import com.it.lpw.game.util.Session;
 import com.google.gson.Gson;
@@ -46,6 +48,9 @@ public class ApiClient {
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                     .create();
 
+//            Log.e("Data", Method.decrypt("https://lpwgames.in"));
+//            Log.e("Data", Method.encrypt(WebApi.Api.BASE_URL));
+
             retrofit = new Retrofit.Builder()
                     .baseUrl(WebApi.Api.BASE_URL)
                     .client(client)
@@ -54,5 +59,4 @@ public class ApiClient {
         }
         return retrofit;
     }
-
 }
